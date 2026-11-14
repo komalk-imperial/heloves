@@ -65,6 +65,19 @@ export default function Footer() {
             <p>© 2026 Heloves Group. All rights reserved.</p>
             <p>Privacy · Terms · Cookies · Photography: Unsplash</p>
           </div>
+          <div className="mx-auto max-w-[1320px] px-5 lg:px-10 pb-6 flex justify-end">
+            <p className="text-sm text-white/50">
+              Build by{" "}
+              <a
+                href="https://www.imperialtechinnovations.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-white border-b-2 border-accent pb-0.5 hover:text-[#e8b98a] transition-colors"
+              >
+                Imperial
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
