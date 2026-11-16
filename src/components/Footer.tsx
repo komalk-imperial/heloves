@@ -5,10 +5,9 @@ import Newsletter from "./Newsletter";
 
 export default function Footer() {
   return (
-    <footer className="mt-24 bg-[#14171a] text-white/70">
+    <footer className="mt-16 bg-[#14171a] text-white/70">
       <div className="relative overflow-hidden">
-        <div className="absolute -top-40 -left-20 size-[480px] rounded-full bg-gold/15 blur-[120px]" />
-        <div className="absolute -bottom-40 right-0 size-[420px] rounded-full bg-sage/30 blur-[120px]" />
+        <div aria-hidden className="fx-aurora" style={{ "--glow": "#c99a4e", "--hi": "#9fbf9a", opacity: 0.4 } as React.CSSProperties} />
 
         <div className="relative mx-auto max-w-[1320px] px-5 lg:px-10 pt-20 pb-12">
           <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr] items-end border-b border-white/10 pb-14">
@@ -64,6 +63,17 @@ export default function Footer() {
           <div className="mx-auto max-w-[1320px] px-5 lg:px-10 py-5 flex flex-col sm:flex-row gap-2 justify-between text-xs text-white/45">
             <p>© 2026 Heloves Group. All rights reserved.</p>
             <p>Privacy · Terms · Cookies · Photography: Unsplash</p>
+            <p>
+              Built by{" "}
+              <a
+                href="https://www.imperialtechinnovations.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="u-link text-white/80 hover:text-white transition-colors"
+              >
+                Imperial
+              </a>
+            </p>
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { categories, discountPct, type Product } from "@/lib/catalog";
 import ProductCard from "./ProductCard";
+import Reveal from "./Reveal";
 import { CloseIcon, FilterIcon } from "./Icons";
 
 type Sort = "popular" | "rating" | "low" | "high" | "discount";
@@ -20,12 +21,15 @@ export default function ProductListing({
   initialSub,
   showCategories = false,
   scope,
+  reveal = false,
 }: {
   products: Product[];
   subs?: string[];
   initialSub?: string;
   showCategories?: boolean;
   scope: string;
+  /** stagger the cards in as they scroll into view */
+  reveal?: boolean;
 }) {
   const [sub, setSub] = useState<string[]>(initialSub ? [initialSub] : []);
   const [cats, setCats] = useState<string[]>([]);
@@ -174,9 +178,15 @@ export default function ProductListing({
 
         {shown.length ? (
           <div className="grid grid-cols-2 md:grid-cols-3 gap-x-5 gap-y-10">
-            {shown.map((p) => (
-              <ProductCard key={p.id} p={p} scope={scope} />
-            ))}
+            {shown.map((p, k) =>
+              reveal ? (
+                <Reveal key={p.id} from={k % 3 === 1 ? "down" : "up"} delay={(k % 3) * 110}>
+                  <ProductCard p={p} scope={scope} />
+                </Reveal>
+              ) : (
+                <ProductCard key={p.id} p={p} scope={scope} />
+              ),
+            )}
           </div>
         ) : (
           <div className="rounded-[20px] bg-ivory border border-line p-12 text-center">

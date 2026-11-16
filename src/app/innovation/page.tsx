@@ -75,6 +75,7 @@ export default function InnovationPage() {
       <section id="sustainability" className="relative mt-28 overflow-hidden scroll-mt-24">
         <Image src="/images/forest.jpg" alt="" fill sizes="100vw" className="kenburns object-cover" />
         <div className="absolute inset-0 bg-[#0f1a0e]/80" />
+        <div aria-hidden className="fx-aurora" style={{ "--glow": "#4f8a58", "--hi": "#c9dcb0" } as React.CSSProperties} />
         <div className="relative mx-auto max-w-[1320px] px-5 lg:px-10 py-24 text-white">
           <Reveal className="max-w-2xl">
             <p className="eyebrow text-[#c9dcb0]">Sustainability</p>

@@ -506,3 +506,106 @@ html.lenis {
     clip-path: none;
   }
 }
+
+/* ─── category pages (components/CategoryWorld.tsx) ─── */
+/* revealed photos still zoom on hover (the settle-in rule would otherwise pin them) */
+.reveal.in .group:hover [data-rv-img] {
+  transform: scale(1.09);
+  transition-duration: 1.1s;
+  transition-delay: 0ms;
+}
+@keyframes ripple {
+  0% {
+    transform: scale(0.3);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+.ripple::before,
+.ripple::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--hi, #9ad3f0) 60%, transparent);
+  animation: ripple 3.2s ease-out infinite;
+}
+.ripple::after {
+  animation-delay: -1.6s;
+}
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spin-slow {
+  animation: spin-slow 18s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ripple::before,
+  .ripple::after {
+    display: none;
+  }
+  .spin-slow {
+    animation: none;
+  }
+}
+
+/* a revisited page snaps its reveals back to hidden instantly, then plays them in again */
+[data-reveal-reset],
+[data-reveal-reset] * {
+  transition: none !important;
+}
+
+/* ─── aurora: slow turning colour + sweeping light beam behind dark sections ───
+   colours come from --glow / --hi on any ancestor (defaults: warm terracotta + gold) */
+.fx-aurora {
+  position: absolute;
+  inset: -40%;
+  pointer-events: none;
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    transparent 0deg,
+    color-mix(in srgb, var(--glow, #b5623f) 55%, transparent) 70deg,
+    transparent 140deg,
+    color-mix(in srgb, var(--hi, #e8b98a) 30%, transparent) 220deg,
+    transparent 300deg
+  );
+  filter: blur(70px);
+  opacity: 0.55;
+  animation: aurora-spin 26s linear infinite;
+}
+.fx-aurora::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 18%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+  filter: blur(20px);
+  animation: aurora-beam 9s ease-in-out infinite;
+}
+@keyframes aurora-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes aurora-beam {
+  0%,
+  100% {
+    transform: translateX(-180%) skewX(-18deg);
+  }
+  50% {
+    transform: translateX(180%) skewX(-18deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fx-aurora,
+  .fx-aurora::after {
+    animation: none;
+  }
+}

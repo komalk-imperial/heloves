@@ -134,8 +134,7 @@ export default function Home() {
           <Image src="/images/forest.jpg" alt="" fill sizes="100vw" className="object-cover opacity-35 mix-blend-luminosity" />
         </div>
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(31,59,45,.6),rgba(15,25,21,.92))]" />
-        <div className="blob absolute -top-24 left-10 size-96 rounded-full bg-gold/25 blur-[110px]" />
-        <div className="blob absolute -bottom-28 right-10 size-96 rounded-full bg-rose/35 blur-[110px] [animation-delay:-6s]" />
+        <div aria-hidden className="fx-aurora" style={{ "--glow": "#c98a4a", "--hi": "#f0cf94" } as React.CSSProperties} />
 
         {/* moving strip of verticals */}
         <div className="relative z-10 border-b border-white/10 py-5 overflow-hidden fade-x">
@@ -171,7 +170,7 @@ export default function Home() {
       {/* ⑥ DARK — wellness, honey & water */}
       <section className="relative mt-24 overflow-hidden rounded-b-[56px] bg-[radial-gradient(ellipse_at_80%_10%,#3a1f28_0%,#1d1316_55%,#140d0f_100%)] text-white py-24">
         <div data-tone-layer aria-hidden className="tone-layer" />
-        <div className="blob absolute top-20 left-[30%] size-[480px] rounded-full bg-[#b5623f]/25 blur-[130px]" />
+        <div aria-hidden className="fx-aurora" style={{ "--glow": "#9c3d54", "--hi": "#e8b98a" } as React.CSSProperties} />
         <div className="relative z-10 mx-auto max-w-[1320px] px-5 lg:px-10">
           <div className="flex flex-wrap items-end justify-between gap-6 mb-12">
             <div>
@@ -271,6 +270,7 @@ export default function Home() {
       {/* ⑧ DARK — testimonials */}
       <section className="relative mt-28 overflow-hidden rounded-b-[56px] bg-[radial-gradient(ellipse_at_10%_100%,#4a1d2c_0%,#24121a_50%,#170c11_100%)] text-white py-28">
         <div data-tone-layer aria-hidden className="tone-layer" />
+        <div aria-hidden className="fx-aurora" style={{ "--glow": "#9c3d54", "--hi": "#e8b98a" } as React.CSSProperties} />
         <div data-drift className="absolute -right-20 top-10 font-display text-[22rem] leading-none text-white/[0.04] select-none" aria-hidden>
           &ldquo;
         </div>
@@ -309,7 +309,7 @@ export default function Home() {
       </section>
 
       {/* ⑨ LIGHT — closing banner, photo melted into the background */}
-      <section className="relative -mb-24 overflow-hidden bg-cream pt-28 pb-28">
+      <section className="relative -mb-16 overflow-hidden bg-cream pt-28 pb-24">
         <div className="relative mx-auto max-w-[1320px] px-5 lg:px-10 grid lg:grid-cols-2 gap-10 items-center">
           <div className="relative z-10">
             <Reveal>

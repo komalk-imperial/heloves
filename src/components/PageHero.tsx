@@ -31,6 +31,7 @@ export default function PageHero({
         </div>
         <div className="absolute inset-0" style={{ background: `linear-gradient(100deg, ${tone} 0%, rgba(20,18,15,.35) 55%, rgba(20,18,15,.05) 100%)` }} />
         <div className="absolute inset-0 bg-[#f3d9b8]/10 mix-blend-soft-light" />
+        <div aria-hidden className="fx-aurora opacity-40!" />
         <div className="relative p-8 md:p-14 text-white max-w-3xl">
           {crumbs && (
             <nav className="rise text-xs text-white/70 mb-6" aria-label="Breadcrumb">
