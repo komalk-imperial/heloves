@@ -53,7 +53,7 @@ export const categories: Category[] = [
   {
     slug: "water",
     name: "Packaged Water",
-    vertical: "Drinking Water",
+    vertical: "Packaged Drinking Water",
     tagline: "Pure, mineral-rich hydration",
     blurb: "9-stage purified, BIS-certified packaged drinking water — from 500 ml bottles to 20 L home and office jars.",
     subs: ["500 ml", "1 Litre", "20 L Jar", "Alkaline", "Sparkling"],

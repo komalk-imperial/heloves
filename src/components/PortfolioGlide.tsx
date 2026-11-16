@@ -22,8 +22,7 @@ export default function PortfolioGlide() {
       className="relative overflow-hidden rounded-b-[56px] bg-[radial-gradient(ellipse_at_20%_0%,#2c4a39_0%,#16261e_45%,#0f1915_100%)] text-white lg:min-h-screen lg:flex lg:flex-col lg:justify-center pt-28 pb-16 lg:py-0"
     >
       <div data-tone-layer aria-hidden className="tone-layer" />
-      <div className="blob absolute -top-20 right-[20%] size-[460px] rounded-full bg-[#c98a4a]/20 blur-[120px]" />
-      <div className="blob absolute bottom-0 -left-20 size-[420px] rounded-full bg-[#9c3d54]/25 blur-[120px] [animation-delay:-7s]" />
+      <div aria-hidden className="fx-aurora" style={{ "--glow": "#4f8a58", "--hi": "#e8b98a" } as React.CSSProperties} />
 
       <div className="relative z-10 mx-auto w-full max-w-[1320px] px-5 lg:px-10 lg:pt-24">
         <div className="flex flex-wrap items-end justify-between gap-6">

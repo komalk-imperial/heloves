@@ -153,6 +153,7 @@ export default function ExpoPage() {
         <div className="relative overflow-hidden rounded-[30px] text-white">
           <Image src="/images/e-hall.jpg" alt="" fill sizes="100vw" className="object-cover" />
           <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(18,16,14,.92)_0%,rgba(18,16,14,.8)_50%,rgba(18,16,14,.6)_100%)]" />
+          <div aria-hidden className="fx-aurora" />
           <div className="relative p-7 md:p-14 grid lg:grid-cols-2 gap-10 items-center">
             <Reveal>
               <p className="eyebrow text-gold">Exhibitors</p>
